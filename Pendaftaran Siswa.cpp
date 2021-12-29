@@ -3,10 +3,8 @@
 #include <conio.h>
 #include <string.h>
 
-//Global Variable disini
 int pilihan,n=0;
 
-//Declare struct disini
 struct tanggallahir{
 	int tanggal;
 	char bulan[50];
@@ -29,7 +27,6 @@ struct siswa{
 }; typedef struct siswa fl;
 fl a[50];
 
-//Declare void disini
 void menu_utama();
 void tambah_data();
 void view_data();
@@ -37,14 +34,12 @@ void cari_data();
 void ubah_data();
 void urutkan_data();
 
-//MAIN PROGRAMNYA
 int main(){
 	system("color 6");
 	menu_utama();	
 	return 0;
 }
 
-//Menu Utama
 void menu_utama(){
 	do{
 		menu:
@@ -114,7 +109,6 @@ void menu_utama(){
 	}while(pilihan>=1 && pilihan<=6);
 }
 
-//Input Data
 void input(int i){
 	printf("[siswa ke-%d] \n", i+1);
 	printf("Masukan Nomor Induk      : "); fflush (stdin); gets(a[i].nomor_induk);
@@ -127,7 +121,6 @@ void input(int i){
 	printf("Masukan Tahun Lahir      : "); fflush (stdin); scanf("%d",&a[i].tglfl.tahun);
 }
 
-//Tampilkan Data
 void view(int i){
 	printf("\n[siswa ke-%d]", i+1);
 	printf("\nNomor Induk       : %s", a[i].nomor_induk);
@@ -141,7 +134,6 @@ void view(int i){
 	printf("\n");
 }
 
-//Update Data
 void updatesiswa(int i){
 	printf("\n[siswa ke-%d] \n", i+1);
 	printf("Ganti Nama         	 : "); fflush (stdin); gets(a[i].nama_siswa);
@@ -153,7 +145,6 @@ void updatesiswa(int i){
 	printf("Ganti Tahun Lahir	 : "); fflush (stdin); scanf("%d",&a[i].tglfl.tahun);
 }
 
-//Binary Search (nomor induk siswa)
 int binary_search(fl arr[], char cari[], int n)
 {
     int t, hasil;
@@ -175,8 +166,6 @@ int binary_search(fl arr[], char cari[], int n)
     return -1;  
 }
 
-//Insertion Sort Jika nama, nomor_induk diganti nama_siswa
-
 void InsertionSort(fl arr[], int n) // id
 {
     int i, j;
@@ -192,7 +181,6 @@ void InsertionSort(fl arr[], int n) // id
     }
 }
 
-//Daftarkan siswa
 void tambah_data(){
 	system("cls");
 	printf("\n--- Input data siswa ---\n\n");
@@ -207,7 +195,6 @@ void tambah_data(){
 	system("cls");
 }
 
-//Tampilkan Data
 void view_data(){
 	int i;
 	system("cls");
@@ -235,7 +222,6 @@ void view_data(){
 	}
 }
 
-//Cari Data Nomor Induk
 void cari_data(){
 		int i, hasil;
 				system("cls");
@@ -293,7 +279,6 @@ void cari_data(){
 	
 }
 
-//Ubah Data
 void ubah_data(){
 	int i;
 	system("cls");
@@ -353,7 +338,6 @@ void ubah_data(){
 	}
 }
 
-//Urutkan Data
 void urutkan_data(){
 	int i;
 				system("cls");
@@ -376,7 +360,7 @@ void urutkan_data(){
 					printf("\n\n<--------------------------------->");
 					printf("\n Data setelah diurutkan");
 					printf("\n<--------------------------------->\n");
-					for(i=0; i<n; i++){					//jika descending, i=n-1; i>=0; i--
+					for(i=0; i<n; i++){					
 						view(i);								
 					}
 					getch();
