@@ -173,7 +173,7 @@ void InsertionSort(fl arr[], int n) // id
     for(i = 1; i < n; i++)
     {
         key = arr[i];
-        for (j = i - 1; (j >= 0) && (strcmp(arr[j+1].nama_siswa, arr[j].nama_siswa)<0); j--)
+        for (j = i - 1; (j >= 0) && (strcmp(arr[j+1].nomor_induk, arr[j].nomor_induk)<0); j--)
         {
             arr[j + 1] = arr[j];
         }
